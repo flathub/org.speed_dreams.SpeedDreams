@@ -14,18 +14,16 @@
      cars, tracks and AI opponents to make a more enjoyable game for the player, 
      as well as constantly improving visual and physics realism.
     </p>
-    <p>
       <ul>
         <li>Accurate driving behaviour, with different physics engines;</li>
-        <li>Playable with a variety of input devices, including keyboards, mouses, joypads, joysticks, racing wheels and pedals (force feed-back is in development);</li>
+        <li>Playable with a variety of input devices (force feed-back is in development);</li>
         <li>Several different racing modes (from a simple practice session, to a full pilot career);</li>
-        <li>Variety of cars/car classes (1936 Grand Prix, Supercars, Long Day Series GT1, Long Day Series GT2, Monoposto 5, World Rally Series) and always expanding;</li>
-        <li>Variety of tracks/tracks categories (Road tracks, Speedways, Grand Prix Circuits, Dirt tracks) and always expanding;</li>
+        <li>Variety of cars/car classes (1936 Grand Prix, Supercars, Long Day Series GT1, etc);</li>
+        <li>Variety of tracks/tracks categories and always expanding;</li>
         <li>Customizable daytime and weather conditions;</li>
         <li>Several different AI bots to race with;</li>
         <li>Up to 4 user local multiplayer in "split-screen" mode;</li>
       </ul>
-    </p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -53,4 +51,5 @@
   <developer_name>Speed Dreams</developer_name>
   <url type="bugtracker">https://sourceforge.net/p/speed-dreams/tickets/</url>
   <url type="help">https://sourceforge.net/p/speed-dreams/wiki/Home/</url>
+  <translation type="gettext">Speed Dreams</translation>
 </component>
