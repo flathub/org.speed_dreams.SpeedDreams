@@ -1,0 +1,16 @@
+--- speed-dreams-2/data/data/fonts/CMakeLists.txt.fs	2018-11-01 06:17:49.000000000 -0600
++++ speed-dreams-2/data/data/fonts/CMakeLists.txt	2018-12-04 04:14:59.000000000 -0600
+@@ -4,3 +4,13 @@
+ FILE(GLOB ttf *.ttf)
+ 
+ SD_INSTALL_FILES(DATA data/fonts FILES ${glf} ${ttf})
++
++FILE(GLOB 5by7 5by7/*.*)
++FILE(GLOB ArmataHL ArmataHL/*.*)
++FILE(GLOB Montserrant Montserrant/*.*)
++FILE(GLOB vera vera/*.*)
++
++SD_INSTALL_FILES(DATA data/fonts/5by7 FILES ${5by7})
++SD_INSTALL_FILES(DATA data/fonts/ArmataHL FILES ${ArmataHL})
++SD_INSTALL_FILES(DATA data/fonts/Montserrant FILES ${Montserrant})
++SD_INSTALL_FILES(DATA data/fonts/vera FILES ${vera})
