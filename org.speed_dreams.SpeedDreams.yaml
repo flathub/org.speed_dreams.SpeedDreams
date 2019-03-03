@@ -25,22 +25,15 @@ cleanup:
   
 modules:
   - shared-modules/glu/glu-9.0.0.json
+  - shared-modules/udev/udev-175.json
 
-  - name: giflib
-    config-opts:
-      - --disable-static
-    sources:
-      - type: archive
-        url: http://downloads.sourceforge.net/sourceforge/giflib/giflib-5.1.4.tar.bz2
-        sha256: df27ec3ff24671f80b29e6ab1c4971059c14ac3db95406884fc26574631ba8d5
-  
   - name: freeglut
     buildsystem: cmake-ninja
     sources:
       - type: archive
         url: https://downloads.sourceforge.net/freeglut/freeglut-3.0.0.tar.gz
         sha256: 2a43be8515b01ea82bcfa17d29ae0d40bd128342f0930cd1f375f1ff999f76a2
-        
+
   - name: jasper
     buildsystem: cmake-ninja
     config-opts:
@@ -56,14 +49,15 @@ modules:
         sha256: 85266eea728f8b14365db9eaf1edc7be4c348704e562bb05095b9a077cf1a97b
         
   - name: openscenegraph
-    buildsystem: cmake-ninja
+    buildsystem: cmake
     config-opts:
     - -DCMAKE_BUILD_TYPE=Release
+    - -DLIB_POSTFIX=
     sources:
       - type: archive
         url: https://github.com/openscenegraph/OpenSceneGraph/archive/OpenSceneGraph-3.4.1.tar.gz
         sha256: 930eb46f05781a76883ec16c5f49cfb29a059421db131005d75bec4d78401fd5
-  
+
   - name: libxmu
     sources:
       - type: archive
@@ -71,18 +65,15 @@ modules:
         sha256: 756edc7c383254eef8b4e1b733c3bf1dc061b523c9f9833ac7058378b8349d0b
   
   - name: plib
-    rm-configure: true
+    build-options:
+      cflags: -fPIC
+      cxxflags: -fPIC
     config-opts:
       - CXXFLAGS=-fPIC
     sources:
       - type: archive
         url: http://plib.sourceforge.net/dist/plib-1.8.5.tar.gz
         sha256: 485b22bf6fdc0da067e34ead5e26f002b76326f6371e2ae006415dea6a380a32
-        
-      - type: script
-        dest-filename: autogen.sh
-        commands:
-          - autoreconf -vfi
 
   - name: enet
     sources:
@@ -90,22 +81,8 @@ modules:
         url: http://enet.bespin.org/download/enet-1.3.13.tar.gz
         sha256: e36072021faa28731b08c15b1c3b5b91b911baf5f6abcc7fe4a6d425abada35c
   
-  - name: freealut
-    cleanup:
-      - /bin
-    sources:
-      - type: archive
-        url: https://github.com/vancegroup/freealut/archive/freealut_1_1_0.tar.gz
-        sha256: c3880d7dbb90c7db54e1d6b88aa0a34dd9e2d828fd389be0d2cbb2632b0885dd
-      - type: script
-        dest-filename: autogen.sh
-        commands:
-          - autoreconf -vfi
-          
-  - shared-modules/udev/udev-175.json
-  
   - name: speed-dreams-2
-    buildsystem: cmake-ninja
+    buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DSD_BINDIR=/app/bin
@@ -114,35 +91,36 @@ modules:
       - -DOPTION_OFFICIAL_ONLY=ON
     
     sources:
-      - type: file
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-base-2.2.2-rc2-r6527.tar.xz
-        sha256: 00a219e2de5c10d70d0ff0881b5abf14f8bbc51be8c27e09c10dd2ffd8a52aa6
-      
-      - type: file
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-wip-cars-and-tracks-2.2.2-rc2-r6527.tar.xz
-        sha256: 9808d6d77b27cba2ca21943d1cff3c1f4022428cca4f76a2873eabe6954f4df1
-          
-      - type: file
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-hq-cars-and-tracks-2.2.2-rc2-r6527.tar.xz
+      - type: archive
+        strip-components: 0
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-base-2.2.2-r6553.tar.xz
+        sha256: 32aa55c17f8dafc1c54fb0d0b7b993d2688d431899cfc5db9eeece148c6887d0
+
+      - type: archive
+        strip-components: 0
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-hq-cars-and-tracks-2.2.2-r6553.tar.xz
         sha256: d8ebe92ebeb88bdf4339de9da5fa20da3d0873a6c2776f23f18e61fc6f510b51
-          
-      - type: file
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-more-hq-cars-and-tracks-2.2.2-rc2-r6527.tar.xz
+
+      - type: archive
+        strip-components: 0
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-more-hq-cars-and-tracks-2.2.2-r6553.tar.xz
         sha256: 0b7b417d007ab3b7f0f4dcfdc868aafee1722150b81af519e1cd4c082b408183
-        
+
+      - type: archive
+        strip-components: 0
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-wip-cars-and-tracks-2.2.2-r6553.tar.xz
+        sha256: 9808d6d77b27cba2ca21943d1cff3c1f4022428cca4f76a2873eabe6954f4df1
+
+        # Patch - the fonts for OSG-hud were not being installed
+      - type: patch
+        path: osg-hud-fonts-2.2.2.patch
+
       - type: file
         path: org.speed_dreams.SpeedDreams.desktop
         
       - type: file
         path: org.speed_dreams.SpeedDreams.appdata.xml
       
-      - type: shell
-        commands:
-          - tar xf speed-dreams-src-base-2.2.2-rc2-r6527.tar.xz
-          - tar xf speed-dreams-src-wip-cars-and-tracks-2.2.2-rc2-r6527.tar.xz
-          - tar xf speed-dreams-src-hq-cars-and-tracks-2.2.2-rc2-r6527.tar.xz
-          - tar xf speed-dreams-src-more-hq-cars-and-tracks-2.2.2-rc2-r6527.tar.xz
-          
     post-install:
       - install -Dm644 org.speed_dreams.SpeedDreams.desktop /app/share/applications/org.speed_dreams.SpeedDreams.desktop
       - install -Dm644 /app/share/speed-dreams-2/data/icons/icon.png /app/share/icons/hicolor/128x128/apps/org.speed_dreams.SpeedDreams.png
