@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Speed Dreams
-Comment=The Open Racing Car Simulator Fork
+Comment=an Open Motorsport Sim
 Icon=org.speed_dreams.SpeedDreams
 Exec=speed-dreams-2
 Categories=Game;Application;SportsGame;
