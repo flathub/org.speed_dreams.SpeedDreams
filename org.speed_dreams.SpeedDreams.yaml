@@ -1,6 +1,6 @@
 app-id: org.speed_dreams.SpeedDreams
 runtime: org.freedesktop.Platform
-runtime-version: '18.08'
+runtime-version: '1.6'
 sdk: org.freedesktop.Sdk
 command: speed-dreams-2
 
