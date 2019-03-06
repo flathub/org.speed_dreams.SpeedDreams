@@ -115,6 +115,10 @@ modules:
       - type: patch
         path: osg-hud-fonts-2.2.2.patch
 
+        # Patch - the images for OSG-sky were not being installed
+      - type: patch
+        path: osg-sky-2.2.2.patch
+
       - type: file
         path: org.speed_dreams.SpeedDreams.desktop
         

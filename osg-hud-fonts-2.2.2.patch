@@ -1,5 +1,7 @@
---- speed-dreams-2/data/data/fonts/CMakeLists.txt.fs	2018-11-01 06:17:49.000000000 -0600
-+++ speed-dreams-2/data/data/fonts/CMakeLists.txt	2018-12-04 04:14:59.000000000 -0600
+Index: data/data/fonts/CMakeLists.txt
+===================================================================
+--- data/data/fonts/CMakeLists.txt	(revision 6566)
++++ data/data/fonts/CMakeLists.txt	(working copy)
 @@ -4,3 +4,13 @@
  FILE(GLOB ttf *.ttf)
  
