@@ -1,0 +1,9 @@
+Index: data/data/sky/CMakeLists.txt
+===================================================================
+--- data/data/sky/CMakeLists.txt	(revision 6401)
++++ data/data/sky/CMakeLists.txt	(working copy)
+@@ -7,3 +7,4 @@
+ FILE(GLOB dds *.dds)
+ 
+ SD_INSTALL_FILES(DATA data/sky FILES ${TXT_FILES})
++SD_INSTALL_FILES(DATA data/sky FILES ${rgb} ${rgba} ${png} ${dds})
