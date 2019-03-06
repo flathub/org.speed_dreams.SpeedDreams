@@ -1,7 +1,7 @@
-Index: data/data/fonts/CMakeLists.txt
+Index: speed-dreams-2/data/data/fonts/CMakeLists.txt
 ===================================================================
---- data/data/fonts/CMakeLists.txt	(revision 6566)
-+++ data/data/fonts/CMakeLists.txt	(working copy)
+--- speed-dreams-2/data/data/fonts/CMakeLists.txt	(revision 6566)
++++ speed-dreams-2/data/data/fonts/CMakeLists.txt	(working copy)
 @@ -4,3 +4,13 @@
  FILE(GLOB ttf *.ttf)
  

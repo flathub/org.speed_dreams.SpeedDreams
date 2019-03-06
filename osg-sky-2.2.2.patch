@@ -1,7 +1,7 @@
-Index: data/data/sky/CMakeLists.txt
+Index: speed-dreams-2/data/data/sky/CMakeLists.txt
 ===================================================================
---- data/data/sky/CMakeLists.txt	(revision 6401)
-+++ data/data/sky/CMakeLists.txt	(working copy)
+--- speed-dreams-2/data/data/sky/CMakeLists.txt	(revision 6401)
++++ speed-dreams-2/data/data/sky/CMakeLists.txt	(working copy)
 @@ -7,3 +7,4 @@
  FILE(GLOB dds *.dds)
  
