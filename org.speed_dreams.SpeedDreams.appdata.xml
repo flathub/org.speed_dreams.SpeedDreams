@@ -43,6 +43,9 @@
       <image>http://speed-dreams.org/images/sd-20/speed-dreams-20-daytime-night.jpg</image>
     </screenshot>
   </screenshots>
+  <metadata>
+    <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/org.speed_dreams.SpeedDreams/master/org.speed_dreams.SpeedDreams-thumb.png</value>
+  </metadata>
   <url type="homepage">http://speed-dreams.org/</url>
   <update_contact>speed-dreams-devel@lists.sourceforge.net</update_contact>
   <releases>
