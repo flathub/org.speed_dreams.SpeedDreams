@@ -1,6 +1,6 @@
 app-id: org.speed_dreams.SpeedDreams
 runtime: org.freedesktop.Platform
-runtime-version: '18.08'
+runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 command: speed-dreams-2
 
@@ -24,15 +24,17 @@ cleanup:
   - '/share/speed-dreams-2/cmake/'
   
 modules:
-  - shared-modules/glu/glu-9.0.0.json
+  - shared-modules/glu/glu-9.json
   #- shared-modules/udev/udev-175.json
 
   - name: freeglut
     buildsystem: cmake-ninja
+    build-options:
+      cflags: -fcommon
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/freeglut/freeglut-3.0.0.tar.gz
-        sha256: 2a43be8515b01ea82bcfa17d29ae0d40bd128342f0930cd1f375f1ff999f76a2
+        url: https://sourceforge.net/projects/freeglut/files/freeglut/3.2.1/freeglut-3.2.1.tar.gz
+        sha256: d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68
 
   - name: jasper
     buildsystem: cmake-ninja
@@ -45,8 +47,8 @@ modules:
     - -DALLOW_IN_SOURCE_BUILD=ON
     sources:
       - type: archive
-        url: https://github.com/mdadams/jasper/archive/version-2.0.14.tar.gz
-        sha256: 85266eea728f8b14365db9eaf1edc7be4c348704e562bb05095b9a077cf1a97b
+        url: https://github.com/jasper-software/jasper/archive/refs/tags/version-2.0.32.tar.gz
+        sha256: a3583a06698a6d6106f2fc413aa42d65d86bedf9a988d60e5cfa38bf72bc64b9
         
   - name: openscenegraph
     buildsystem: cmake
@@ -55,14 +57,14 @@ modules:
     - -DLIB_POSTFIX=
     sources:
       - type: archive
-        url: https://github.com/openscenegraph/OpenSceneGraph/archive/OpenSceneGraph-3.4.1.tar.gz
-        sha256: 930eb46f05781a76883ec16c5f49cfb29a059421db131005d75bec4d78401fd5
+        url: https://github.com/openscenegraph/OpenSceneGraph/archive/refs/tags/OpenSceneGraph-3.6.5.tar.gz
+        sha256: aea196550f02974d6d09291c5d83b51ca6a03b3767e234a8c0e21322927d1e12
 
   - name: libxmu
     sources:
       - type: archive
-        url: https://www.x.org/archive//individual/lib/libXmu-1.1.2.tar.bz2
-        sha256: 756edc7c383254eef8b4e1b733c3bf1dc061b523c9f9833ac7058378b8349d0b
+        url: https://www.x.org/archive//individual/lib/libXmu-1.1.3.tar.bz2
+        sha256: 9c343225e7c3dc0904f2122b562278da5fed639b1b5e880d25111561bac5b731
   
   - name: plib
     build-options:
@@ -78,8 +80,8 @@ modules:
   - name: enet
     sources:
       - type: archive
-        url: http://enet.bespin.org/download/enet-1.3.13.tar.gz
-        sha256: e36072021faa28731b08c15b1c3b5b91b911baf5f6abcc7fe4a6d425abada35c
+        url: http://enet.bespin.org/download/enet-1.3.17.tar.gz
+        sha256: a38f0f194555d558533b8b15c0c478e946310022d0ec7b34334e19e4574dcedc
   
   - name: speed-dreams-2
     buildsystem: cmake
