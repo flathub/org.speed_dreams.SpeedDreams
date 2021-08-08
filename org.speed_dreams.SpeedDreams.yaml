@@ -95,31 +95,31 @@ modules:
     sources:
       - type: archive
         strip-components: 0
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-base-2.2.2-r6553.tar.xz
-        sha256: 32aa55c17f8dafc1c54fb0d0b7b993d2688d431899cfc5db9eeece148c6887d0
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-base-2.2.3-r7616.tar.xz
+        sha256: c67e48a083cd86f6c0062f0b38ed91a5d25274ea8aa656ee182f3f5074e96ff0
 
       - type: archive
         strip-components: 0
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-hq-cars-and-tracks-2.2.2-r6553.tar.xz
-        sha256: d8ebe92ebeb88bdf4339de9da5fa20da3d0873a6c2776f23f18e61fc6f510b51
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-hq-cars-and-tracks-2.2.3-r7616.tar.xz
+        sha256: 06eaf2094bc10fbaca980a4236c4e444dd14275aba3f7b1d62b4b3a53a9d4c77
 
       - type: archive
         strip-components: 0
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-more-hq-cars-and-tracks-2.2.2-r6553.tar.xz
-        sha256: 0b7b417d007ab3b7f0f4dcfdc868aafee1722150b81af519e1cd4c082b408183
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-more-hq-cars-and-tracks-2.2.3-r7616.tar.xz
+        sha256: 19208761b252df9db200c733cecb3bb584905f02d057af2bbff5e4c86cbe1a86
 
       - type: archive
         strip-components: 0
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-wip-cars-and-tracks-2.2.2-r6553.tar.xz
-        sha256: 9808d6d77b27cba2ca21943d1cff3c1f4022428cca4f76a2873eabe6954f4df1
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-wip-cars-and-tracks-2.2.3-r7616.tar.xz
+        sha256: aff20e49ff94660d9ef962079f640d0ceeaa414869209be1ec41768d0ee5cb20
 
         # Patch - the fonts for OSG-hud were not being installed
-      - type: patch
-        path: osg-hud-fonts-2.2.2.patch
+      #- type: patch
+      #  path: osg-hud-fonts-2.2.2.patch
 
         # Patch - the images for OSG-sky were not being installed
-      - type: patch
-        path: osg-sky-2.2.2.patch
+      #- type: patch
+      #  path: osg-sky-2.2.2.patch
 
       - type: file
         path: org.speed_dreams.SpeedDreams.desktop
