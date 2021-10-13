@@ -1,13 +1,13 @@
 app-id: org.speed_dreams.SpeedDreams
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 command: speed-dreams-2
 
 finish-args:
   - --socket=wayland
   - --share=ipc
-  - --socket=x11
+  - --socket=fallback-x11
   - --device=all
   - --persist=.speed-dreams-2
   - --socket=pulseaudio
