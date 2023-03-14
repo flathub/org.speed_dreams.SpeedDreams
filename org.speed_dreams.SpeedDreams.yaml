@@ -33,8 +33,8 @@ modules:
       cflags: -fcommon
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/freeglut/files/freeglut/3.2.1/freeglut-3.2.1.tar.gz
-        sha256: d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68
+        url: https://sourceforge.net/projects/freeglut/files/freeglut/3.4.0/freeglut-3.4.0.tar.gz
+        sha256: 3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec
 
   - name: jasper
     buildsystem: cmake-ninja
@@ -47,8 +47,8 @@ modules:
     - -DALLOW_IN_SOURCE_BUILD=ON
     sources:
       - type: archive
-        url: https://github.com/jasper-software/jasper/archive/refs/tags/version-2.0.32.tar.gz
-        sha256: a3583a06698a6d6106f2fc413aa42d65d86bedf9a988d60e5cfa38bf72bc64b9
+        url: https://github.com/jasper-software/jasper/archive/refs/tags/version-4.0.0.tar.gz
+        sha256: 977c4c2e4210f4e37313cd2232d99e73d57ab561917b3c060bcdd5e83a0a13f1
         
   - name: openscenegraph
     buildsystem: cmake
@@ -63,8 +63,8 @@ modules:
   - name: libxmu
     sources:
       - type: archive
-        url: https://www.x.org/archive//individual/lib/libXmu-1.1.3.tar.bz2
-        sha256: 9c343225e7c3dc0904f2122b562278da5fed639b1b5e880d25111561bac5b731
+        url: https://www.x.org/archive//individual/lib/libXmu-1.1.4.tar.gz
+        sha256: 3091d711cdc1d8ea0f545a13b90d1464c3c3ab64778fd121f0d789b277a80289
   
   - name: plib
     build-options:
@@ -83,8 +83,11 @@ modules:
   - name: enet
     sources:
       - type: archive
-        url: http://enet.bespin.org/download/enet-1.3.17.tar.gz
-        sha256: a38f0f194555d558533b8b15c0c478e946310022d0ec7b34334e19e4574dcedc
+        url: https://github.com/lsalzman/enet/archive/refs/tags/v1.3.17.tar.gz
+        sha256: 1e0b4bc0b7127a2d779dd7928f0b31830f5b3dcb7ec9588c5de70033e8d2434a
+      - type: script
+        dest-filename: autogen.sh
+        commands: [ "autoreconf -vfi" ]
   
   - name: speed-dreams2
     buildsystem: cmake-ninja
@@ -98,23 +101,23 @@ modules:
     sources:
       - type: archive
         strip-components: 0
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-base-2.2.3-r7616.tar.xz
-        sha256: c67e48a083cd86f6c0062f0b38ed91a5d25274ea8aa656ee182f3f5074e96ff0
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-base-2.3.0-r8786.tar.xz
+        sha256: 0d4c8cb3d1ebd4f62098d570058fdeeac9d578697d197d009d9ed2f9314004a4
 
       - type: archive
         strip-components: 0
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-hq-cars-and-tracks-2.2.3-r7616.tar.xz
-        sha256: 06eaf2094bc10fbaca980a4236c4e444dd14275aba3f7b1d62b4b3a53a9d4c77
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-hq-cars-and-tracks-2.3.0-r8786.tar.xz
+        sha256: 593f96eaebb0e014526c5d42c35db7ab7bfda920af050ed3710fd8d1157fec9b
 
       - type: archive
         strip-components: 0
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-more-hq-cars-and-tracks-2.2.3-r7616.tar.xz
-        sha256: 19208761b252df9db200c733cecb3bb584905f02d057af2bbff5e4c86cbe1a86
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-more-hq-cars-and-tracks-2.3.0-r8786.tar.xz
+        sha256: a6c029bfe6751c316f8796f3b75db99a8fd9bcee6b8de7bf2a139fe3988a9ca9
 
-      - type: archive
-        strip-components: 0
-        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-wip-cars-and-tracks-2.2.3-r7616.tar.xz
-        sha256: aff20e49ff94660d9ef962079f640d0ceeaa414869209be1ec41768d0ee5cb20
+      #- type: archive
+      #  strip-components: 0
+      #  url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-wip-cars-and-tracks-2.3.0-r8786.tar.xz
+      #  sha256: aff20e49ff94660d9ef962079f640d0ceeaa414869209be1ec41768d0ee5cb20
 
         # Patch - the fonts for OSG-hud were not being installed
       #- type: patch
@@ -124,8 +127,8 @@ modules:
       #- type: patch
       #  path: osg-sky-2.2.2.patch
 
-      - type: patch
-        path: speeddreams-aarch64.patch
+      #- type: patch
+      #  path: speeddreams-aarch64.patch
 
       - type: file
         path: org.speed_dreams.SpeedDreams.desktop
