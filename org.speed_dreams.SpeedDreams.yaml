@@ -97,6 +97,7 @@ modules:
       - -DSD_DATADIR=/app/share/speed-dreams-2
       - -DSD_LIBDIR=/app/lib/speed-dreams-2
       - -DOPTION_OFFICIAL_ONLY=ON
+      - -DOPTION_TRACKEDITOR=OFF
     
     sources:
       - type: archive
@@ -114,21 +115,10 @@ modules:
         url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-more-hq-cars-and-tracks-2.3.0-r8786.tar.xz
         sha256: a6c029bfe6751c316f8796f3b75db99a8fd9bcee6b8de7bf2a139fe3988a9ca9
 
-      #- type: archive
-      #  strip-components: 0
-      #  url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-wip-cars-and-tracks-2.3.0-r8786.tar.xz
-      #  sha256: aff20e49ff94660d9ef962079f640d0ceeaa414869209be1ec41768d0ee5cb20
-
-        # Patch - the fonts for OSG-hud were not being installed
-      #- type: patch
-      #  path: osg-hud-fonts-2.2.2.patch
-
-        # Patch - the images for OSG-sky were not being installed
-      #- type: patch
-      #  path: osg-sky-2.2.2.patch
-
-      #- type: patch
-      #  path: speeddreams-aarch64.patch
+      - type: archive
+        strip-components: 0
+        url: https://downloads.sourceforge.net/sourceforge/speed-dreams/speed-dreams-src-wip-cars-and-tracks-2.3.0-r8786.tar.xz
+        sha256: 38401ba857ced8fcc73fbf9e02d3cd9f7425e9f60d4cacf3416f251def4a0d73
 
       - type: file
         path: org.speed_dreams.SpeedDreams.desktop
