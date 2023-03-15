@@ -46,9 +46,10 @@
   <metadata>
     <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/org.speed_dreams.SpeedDreams/master/org.speed_dreams.SpeedDreams-thumb.png</value>
   </metadata>
-  <url type="homepage">http://speed-dreams.org/</url>
+  <url type="homepage">https://www.speed-dreams.net</url>
   <update_contact>speed-dreams-devel@lists.sourceforge.net</update_contact>
   <releases>
+  	 <release date="2023-03-13" version="2.3.0"/>
      <release date="2021-08-07" version="2.2.3"/>
      <release date="2018-11-01" version="2.2.2"/>
   </releases>
