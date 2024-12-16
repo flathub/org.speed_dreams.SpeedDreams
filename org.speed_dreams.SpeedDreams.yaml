@@ -136,5 +136,5 @@ modules:
       - install -Dm644 org.speed_dreams.SpeedDreams.desktop /app/share/applications/org.speed_dreams.SpeedDreams.desktop
       - install -Dm644 /app/share/speed-dreams-2/data/icons/icon.png /app/share/icons/hicolor/128x128/apps/org.speed_dreams.SpeedDreams.png
       - install -Dm644 org.speed_dreams.SpeedDreams.appdata.xml /app/share/appdata/org.speed_dreams.SpeedDreams.appdata.xml
-      - install -m 644 raceengine.xml app/share/speed-dreams-2/config/raceengine.xml
-      - install -m 644 human.xml app/share/speed-dreams-2/drivers/human/human.xml
+      - install -Dm644 raceengine.xml app/share/speed-dreams-2/config/raceengine.xml
+      - install -Dm644 human.xml app/share/speed-dreams-2/drivers/human/human.xml
