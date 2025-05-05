@@ -49,13 +49,20 @@
   <url type="homepage">https://www.speed-dreams.net</url>
   <update_contact>speed-dreams-devel@lists.sourceforge.net</update_contact>
   <releases>
+     <release date="2025-05-04" version="2.4.1"/>
+     <release date="2025-02-01" version="2.4.1"/>
   	 <release date="2023-03-13" version="2.3.0"/>
      <release date="2021-08-07" version="2.2.3"/>
      <release date="2018-11-01" version="2.2.2"/>
   </releases>
   <content_rating type="oars-1.1"/>
   <developer_name>Speed Dreams</developer_name>
-  <url type="bugtracker">https://sourceforge.net/p/speed-dreams/tickets/</url>
+  <url type="bugtracker">https://forge.a-lec.org/speed-dreams/speed-dreams-code/issues</url>
   <url type="help">https://sourceforge.net/p/speed-dreams/wiki/Home/</url>
   <translation type="gettext">Speed Dreams</translation>
+  <icon type="stock">org.speed_dreams.SpeedDreams</icon>
+  <categories>
+  	<category>Racing</category>
+  	<category>Simulation</category>
+  </categories>
 </component>
