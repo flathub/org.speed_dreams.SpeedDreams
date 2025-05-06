@@ -25,6 +25,9 @@
         <li>Several different AI bots to race with;</li>
         <li>Up to 4 user local multiplayer in "split-screen" mode;</li>
       </ul>
+    <p>
+      Note: If you use Wayland, keep or change the OpenGL engine to osgGraph (default engine), the old engine, ssggraph, causes game to shut down when starting a race.
+    </p>
   </description>
     <screenshots>
     <screenshot type="default">
@@ -43,9 +46,6 @@
       <image>https://www.speed-dreams.net/user/pages/01.home/slide02@3x.jpg</image>
     </screenshot>
   </screenshots>
-  <metadata>
-    <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/org.speed_dreams.SpeedDreams/master/org.speed_dreams.SpeedDreams-thumb.png</value>
-  </metadata>
   <url type="homepage">https://www.speed-dreams.net</url>
   <update_contact>speed-dreams-devel@lists.sourceforge.net</update_contact>
   <releases>
@@ -56,7 +56,9 @@
      <release date="2018-11-01" version="2.2.2"/>
   </releases>
   <content_rating type="oars-1.1"/>
-  <developer_name>Speed Dreams</developer_name>
+  <developer id="org.speed_dreams">
+    <name>Speed Dreams Team</name>
+  </developer>
   <url type="bugtracker">https://forge.a-lec.org/speed-dreams/speed-dreams-code/issues</url>
   <url type="help">https://sourceforge.net/p/speed-dreams/wiki/Home/</url>
   <translation type="gettext">Speed Dreams</translation>
