@@ -6,9 +6,8 @@ sdk: org.freedesktop.Sdk
 command: speed-dreams-2
 
 finish-args:
-  - --socket=wayland
   - --share=ipc
-  - --socket=fallback-x11
+  - --socket=x11
   - --device=all
   - --persist=.speed-dreams-2
   - --socket=pulseaudio
