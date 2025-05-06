@@ -4,6 +4,6 @@ Type=Application
 Name=Speed Dreams
 Comment=an Open Motorsport Sim
 Icon=org.speed_dreams.SpeedDreams
-Exec=speed-dreams-2
+Exec=/app/games/speed-dreams-2
 Categories=Game;Application;SportsGame;
 Encoding=UTF-8

@@ -24,38 +24,48 @@
         <li>Customizable daytime and weather conditions;</li>
         <li>Several different AI bots to race with;</li>
         <li>Up to 4 user local multiplayer in "split-screen" mode;</li>
+        <li>Register on our master server and submit your race data to share it with the world, as well as participate in our weekly championships: https://www.speed-dreams.net/masterserver/</li>
+        <li>Download cars, tracks and racers from the download manager</li>
       </ul>
+    <p>
+      Note: If you use Wayland, keep or change the OpenGL engine to osgGraph (default engine), the old engine, ssggraph, causes game to shut down when starting a race.
+    </p>
   </description>
-  <screenshots>
+    <screenshots>
     <screenshot type="default">
-      <image>http://speed-dreams.org/images/sd-20/speed-dreams-20-car-supercars.jpg</image>
+      <image>https://speed-dreams.net/user/pages/01.home/slide01@3x.jpg</image>
     </screenshot>
     <screenshot>
-      <image>http://speed-dreams.org/images/sd-20/speed-dreams-20-daytime-dusk.jpg</image>
+      <image>https://speed-dreams.net/user/pages/01.home/slide05@3x.jpg</image>
     </screenshot>
     <screenshot>
-      <image>http://speed-dreams.org/images/sd-20/speed-dreams-20-car-ls1.jpg</image>
+      <image>https://speed-dreams.net/user/pages/01.home/slide07@3x.jpg</image>
     </screenshot>
     <screenshot>
-      <image>http://speed-dreams.org/images/sd-20/speed-dreams-20-track-garguree.jpg</image>
+      <image>https://speed-dreams.net/user/pages/01.home/slide03@3x.jpg</image>
     </screenshot>
     <screenshot>
-      <image>http://speed-dreams.org/images/sd-20/speed-dreams-20-daytime-night.jpg</image>
+      <image>https://www.speed-dreams.net/user/pages/01.home/slide02@3x.jpg</image>
     </screenshot>
   </screenshots>
-  <metadata>
-    <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/org.speed_dreams.SpeedDreams/master/org.speed_dreams.SpeedDreams-thumb.png</value>
-  </metadata>
   <url type="homepage">https://www.speed-dreams.net</url>
   <update_contact>speed-dreams-devel@lists.sourceforge.net</update_contact>
   <releases>
+     <release date="2025-05-04" version="2.4.1"/>
+     <release date="2025-02-01" version="2.4.1"/>
   	 <release date="2023-03-13" version="2.3.0"/>
      <release date="2021-08-07" version="2.2.3"/>
      <release date="2018-11-01" version="2.2.2"/>
   </releases>
   <content_rating type="oars-1.1"/>
-  <developer_name>Speed Dreams</developer_name>
-  <url type="bugtracker">https://sourceforge.net/p/speed-dreams/tickets/</url>
+  <developer id="org.speed_dreams">
+    <name>Speed Dreams Team</name>
+  </developer>
+  <url type="bugtracker">https://forge.a-lec.org/speed-dreams/speed-dreams-code/issues</url>
   <url type="help">https://sourceforge.net/p/speed-dreams/wiki/Home/</url>
   <translation type="gettext">Speed Dreams</translation>
+  <icon type="stock">org.speed_dreams.SpeedDreams</icon>
+  <categories>
+  	<category>Simulation</category>
+  </categories>
 </component>

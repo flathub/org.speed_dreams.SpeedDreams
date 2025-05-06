@@ -1,0 +1,132 @@
+# author Philippe Verney from F2I-CONSULTING
+
+cmake_minimum_required(VERSION 3.6)
+
+project(minizip VERSION 1.1)
+
+set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
+
+find_package(ZLIB)
+
+add_library(${PROJECT_NAME} "")
+add_library(minizip::${PROJECT_NAME} ALIAS minizip)
+
+target_sources(${PROJECT_NAME} 
+	PRIVATE 
+		"${CMAKE_CURRENT_LIST_DIR}/crypt.h"
+		"${CMAKE_CURRENT_LIST_DIR}/ioapi.c"
+		"${CMAKE_CURRENT_LIST_DIR}/ioapi.h"
+		"${CMAKE_CURRENT_LIST_DIR}/unzip.h"
+		"${CMAKE_CURRENT_LIST_DIR}/unzip.c"
+		"${CMAKE_CURRENT_LIST_DIR}/zip.h"
+		"${CMAKE_CURRENT_LIST_DIR}/zip.c"
+
+)
+
+if(WIN32)
+	target_sources(${PROJECT_NAME} 
+		PRIVATE
+			"${CMAKE_CURRENT_LIST_DIR}/iowin32.h"
+			"${CMAKE_CURRENT_LIST_DIR}/iowin32.c"
+	)
+endif()
+
+option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE ZLIB::ZLIB)
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+	$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/minizip>
+)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES ${CMAKE_DEBUG_POSTFIX} EXPORT_NAME minizip)
+
+include(GNUInstallDirs)
+
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/minizip
+	COMPONENT minizip_headers
+	FILES_MATCHING PATTERN "*.h"
+	PATTERN ".git" EXCLUDE
+	REGEX "iowin32.h" EXCLUDE
+)
+
+if(WIN32)
+	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/iowin32.h
+		DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/minizip
+		COMPONENT minizip_headers
+	)
+endif()
+
+
+include(CMakePackageConfigHelpers)
+
+######## 1. Build tree
+
+export(TARGETS ${PROJECT_NAME}
+	NAMESPACE minizip::
+	FILE "${CMAKE_BINARY_DIR}/lib/cmake/${PROJECT_NAME}/${PROJECT_NAME}Targets.cmake"
+)
+
+export(PACKAGE ${PROJECT_NAME})
+
+
+configure_package_config_file(
+	"${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}Config.cmake.in"
+	"${CMAKE_BINARY_DIR}/lib/cmake/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake"
+	INSTALL_DESTINATION "${CMAKE_BINARY_DIR}/lib/cmake/${PROJECT_NAME}"
+	NO_SET_AND_CHECK_MACRO
+	NO_CHECK_REQUIRED_COMPONENTS_MACRO
+)
+
+write_basic_package_version_file(
+	"${CMAKE_BINARY_DIR}/lib/cmake/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
+	VERSION ${PROJECT_VERSION}
+	COMPATIBILITY ExactVersion
+)
+
+######## 2. Install tree
+
+install(TARGETS ${PROJECT_NAME}
+	EXPORT ${PROJECT_NAME}Targets
+	RUNTIME
+		DESTINATION ${CMAKE_INSTALL_BINDIR}
+		COMPONENT ${PROJECT_NAME}_applications
+	LIBRARY
+		DESTINATION ${CMAKE_INSTALL_LIBDIR}
+		COMPONENT ${PROJECT_NAME}_libraries
+	ARCHIVE
+		DESTINATION ${CMAKE_INSTALL_LIBDIR}
+		COMPONENT ${PROJECT_NAME}_libraries
+)
+
+install(EXPORT ${PROJECT_NAME}Targets
+	NAMESPACE minizip::
+	DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+	COMPONENT ${PROJECT_NAME}_libraries
+)
+
+configure_package_config_file(
+	"${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}Config.cmake.in"
+	"${CMAKE_BINARY_DIR}/cmake/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake"
+	INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+	NO_SET_AND_CHECK_MACRO
+	NO_CHECK_REQUIRED_COMPONENTS_MACRO
+)
+
+install(FILES "${CMAKE_BINARY_DIR}/cmake/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake"
+	DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+	COMPONENT ${PROJECT_NAME}_libraries
+)
+
+write_basic_package_version_file(
+	"${CMAKE_BINARY_DIR}/cmake/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
+	VERSION ${PROJECT_VERSION}
+	COMPATIBILITY ExactVersion
+)
+
+install(FILES "${CMAKE_BINARY_DIR}/cmake/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
+	DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+	COMPONENT ${PROJECT_NAME}_libraries
+)
