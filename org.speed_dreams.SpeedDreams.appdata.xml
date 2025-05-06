@@ -62,7 +62,6 @@
   <translation type="gettext">Speed Dreams</translation>
   <icon type="stock">org.speed_dreams.SpeedDreams</icon>
   <categories>
-  	<category>Racing</category>
   	<category>Simulation</category>
   </categories>
 </component>
