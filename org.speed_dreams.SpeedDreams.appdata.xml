@@ -24,6 +24,8 @@
         <li>Customizable daytime and weather conditions;</li>
         <li>Several different AI bots to race with;</li>
         <li>Up to 4 user local multiplayer in "split-screen" mode;</li>
+        <li>Register on our master server and submit your race data to share it with the world, as well as participate in our weekly championships: https://www.speed-dreams.net/masterserver/</li>
+        <li>Download cars, tracks and racers from the download manager</li>
       </ul>
     <p>
       Note: If you use Wayland, keep or change the OpenGL engine to osgGraph (default engine), the old engine, ssggraph, causes game to shut down when starting a race.
