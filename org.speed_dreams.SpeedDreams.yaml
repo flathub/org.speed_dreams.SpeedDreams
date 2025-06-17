@@ -179,7 +179,7 @@ modules:
     sources:
       - type: git
         url: https://forge.a-lec.org/speed-dreams/speed-dreams-code
-        tag: v2.4.1
+        tag: v2.4.2
         
       - type: file
         path: speed-dreams-2.sh

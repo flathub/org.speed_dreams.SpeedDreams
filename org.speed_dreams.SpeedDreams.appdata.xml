@@ -51,6 +51,9 @@
   <url type="homepage">https://www.speed-dreams.net</url>
   <update_contact>speed-dreams-devel@lists.sourceforge.net</update_contact>
   <releases>
+    <release date="2025-05-31" version="2.4.2">
+        <url type="details">https://www.speed-dreams.net/en/blog/release-2-4-2</url>
+     </release>
      <release date="2025-05-04" version="2.4.1">
         <url type="details">https://www.speed-dreams.net/en/blog/release-2-4-1</url>
      </release>
