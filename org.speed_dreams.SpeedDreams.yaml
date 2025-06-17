@@ -36,7 +36,7 @@ modules:
         sha256: 6e7280ff585c6a1d9dfcdf2fca489251634b3377bfc33c29e4002466a38d02d4
 
   - name: jasper
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
     - -DJAS_ENABLE_OPENGL=ON
     - -DJAS_ENABLE_LIBJPEG=ON
@@ -50,7 +50,7 @@ modules:
         sha256: 977c4c2e4210f4e37313cd2232d99e73d57ab561917b3c060bcdd5e83a0a13f1
  
   - name: ogg
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
     - -DBUILD_TESTING=off
     - -DINSTALL_DOCS=off
@@ -61,7 +61,7 @@ modules:
         sha256: 0eb4b4b9420a0f51db142ba3f9c64b333f826532dc0f48c6410ae51f4799b664
         
   - name: vorbis
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
     - -DBUILD_TESTING=off
     - -DINSTALL_DOCS=off
@@ -72,7 +72,7 @@ modules:
         sha256: 0e982409a9c3fc82ee06e08205b1355e5c6aa4c36bca58146ef399621b0ce5ab
    
   - name: openscenegraph
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
     - -DCMAKE_DEBUG_POSTFIX=''
     - -DUSE_3RDPARTY_BIN=Off
@@ -132,7 +132,7 @@ modules:
         commands: [ "autoreconf -vfi" ]
  
   - name: cjson
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
     - -D CMAKE_DEBUG_POSTFIX=
     - -D CJSON_BUILD_LOADER_EXAMPLE=Off
@@ -147,7 +147,7 @@ modules:
     cofing-opts:
     - -DCMAKE_DEBUG_POSTFIX=''
     - -DCMAKE_BUILD_TYPE=Release
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     sources:
       - type: archive
         url: https://github.com/F2I-Consulting/Minizip/archive/refs/tags/v1.3_cmake0.1.tar.gz
@@ -157,7 +157,7 @@ modules:
         dest-filename: CMakeLists.txt
         
   - name: rhash
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
     - -DUSE_GETTEXT=OFF
     - -DBUILD_SHARED_LIBS=1
@@ -170,7 +170,7 @@ modules:
         path: patches/rhash/
         
   - name: speed-dreams2
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DOPTION_OFFICIAL_ONLY=ON
