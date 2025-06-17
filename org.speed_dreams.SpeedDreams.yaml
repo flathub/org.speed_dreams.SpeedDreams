@@ -144,7 +144,7 @@ modules:
         sha256: cc6d93cc3b659037c34193ecc7be5a874a18c2ac67b24efe82db6a759b486b5d
         
   - name: minizip
-    cofing-opts:
+    config-opts:
     - -DCMAKE_DEBUG_POSTFIX=''
     - -DCMAKE_BUILD_TYPE=Release
     buildsystem: cmake-ninja
