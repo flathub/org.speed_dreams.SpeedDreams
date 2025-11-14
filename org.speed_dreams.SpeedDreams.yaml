@@ -124,12 +124,17 @@ modules:
   
   - name: enet
     sources:
-      - type: archive
-        url: https://github.com/lsalzman/enet/archive/refs/tags/v1.3.18.tar.gz
-        sha256: 28603c895f9ed24a846478180ee72c7376b39b4bb1287b73877e5eae7d96b0dd
-      - type: script
+      - sha256: 28603c895f9ed24a846478180ee72c7376b39b4bb1287b73877e5eae7d96b0dd
+        type: archive
+        url: https://github.com/lsalzman/enet/archive/v1.3.18.tar.gz
+        x-checker-data:
+          type: anitya
+          project-id: 696
+          url-template: https://github.com/lsalzman/enet/archive/v$version.tar.gz
+      - type: script  # cf. https://github.com/lsalzman/enet/blob/master/README
         dest-filename: autogen.sh
-        commands: [ "autoreconf -vfi" ]
+        commands:
+          - autoreconf -ifv
  
   - name: cjson
     buildsystem: cmake-ninja
